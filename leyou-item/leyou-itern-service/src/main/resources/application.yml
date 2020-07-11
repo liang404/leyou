@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///leyou?serverTimezone=UTC
+    username: root
+    password: 122425
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5  # 5秒钟发送一次心跳
+    lease-expiration-duration-in-seconds: 15 # 10秒不发送就过期
+mybatis:
+  type-aliases-package: com.leyou.item.pojo # 别名扫描，在interface模型中
